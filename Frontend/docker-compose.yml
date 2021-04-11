@@ -1,0 +1,36 @@
+#Site 2 compose file
+version: '3'
+
+services:
+
+  frontend:
+    # build: ./src/frontend/
+    image: gcr.io/earthworks-541/gcp_almaden_frontend1
+    ports:
+      - "80:3000"
+    tty: true
+    volumes:
+      - ./src:/src
+    networks:
+      - common
+    environment: 
+      PROD: 1
+      BACKEND_HOST: backend
+    depends_on:
+      - backend
+
+  backend:
+    # build: ./src/backend/
+    image: gcr.io/earthworks-541/gcp_almaden_backend1
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend/src:/backend/src
+    networks:
+      - common
+    environment:
+      PROD: 1
+      
+networks:
+  common:
+    driver: bridge
