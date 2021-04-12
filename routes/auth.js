@@ -5,7 +5,8 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = require("../constants");
 const User = mongoose.model("User");
 const router = express.Router();
-const { OAuth2Client } = require('google-auth-library')
+const { OAuth2Client } = require('google-auth-library');
+const { hasBrowserCrypto } = require("google-auth-library/build/src/crypto/crypto");
 const client = new OAuth2Client(process.env.CLIENT_ID)
 
 
@@ -78,16 +79,35 @@ router.post("/signin", (req, res) => {
         });
 });
 
-// Google login handle
 router.post("/googleLogin", async (req, res) => {
 
-    const { token } = req.body;
-    var ticket = await client.verifyIdToken({ idToken: token, audience: process.env.CLIENT_ID })
-    console.log(req.token)
-    const { name, email } = ticket.getPayload();
-    const jwtToken = jwt.sign({ _id: "savedUser._id " }, JWT_SECRET);
-    res.json({ jwtToken, user: { name, email } });
+    const { tokenId, userId, emailId } = req.body;
+    console.log("YAAA",req.body)
+    var ticket = await client.verifyIdToken({ idToken: tokenId})
+    User.findOne({ Email:  emailId})
+    .then((savedUser) => {
+        // Verify if the user exist in the DB
+        if (savedUser) {
+            const jwtToken = jwt.sign({ _id: savedUser._id }, JWT_SECRET);
+             return res.json({ jwtToken, user: {  userId, emailId } });
+        }
+            // We save our new user to DB
+            const user = new User({
+                Name: userId,
+                Email: emailId,
+                Password: "Google Login"
+            });
+            user.save()
+                .then((user) => {
+                    const jwtToken = jwt.sign({ _id: user._id }, JWT_SECRET);
+                     return res.json({ jwtToken, user: {  userId, emailId } });
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        });
+    })
 
-});
+
 
 module.exports = router;

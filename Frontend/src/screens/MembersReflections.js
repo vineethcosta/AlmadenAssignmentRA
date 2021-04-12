@@ -69,9 +69,9 @@ function MembersReflections() {
 
 
                     <div className="row">
-                        <div className="col-lg-3 text-center">
-                            <img style={{ width: 800, height: 500 }} src={relections} alt="" />
-                        </div>
+                        
+                            <img  className="img-fluid" src={relections} alt="" />
+                       
                     </div>
                 </div>
             </section>

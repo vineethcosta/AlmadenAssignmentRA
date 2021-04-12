@@ -15,16 +15,16 @@ const Donate = () => {
 
           <div className="row">
             <div className="col-lg-3 text-center">
-              <img style={{ width: 220, height: 220 }} src={one} alt="" />
+              <img className="img-fluid" src={one} alt="" />
             </div>
             <div className="col-lg-3 text-center">
-              <img style={{ width: 220, height: 220 }} src={two} alt="" />
+              <img  className="img-fluid" src={two} alt="" />
             </div>
             <div className="col-lg-3 text-center">
-              <img style={{ width: 220, height: 220 }} src={three} alt="" />
+              <img  className="img-fluid" src={three} alt="" />
             </div>
             <div className="col-lg-3 text-center">
-              <img style={{ width: 220, height: 220 }} src={four} alt="" />
+              <img  className="img-fluid" src={four} alt="" />
             </div>
           </div>
           <br />
@@ -41,15 +41,17 @@ const Donate = () => {
               <ul className="timeline">
                 <li>
                   <div >
-                    <img src={paypal} alt="" />
+                    <img className="img-fluid" src={paypal} alt="" />
                   </div>
+                  <br/>
+                
                   <div className="timeline-panel">
                     <div className="timeline-heading">
 
                       <h2 className="subheading" style={{ textAlign: 'center' }} >Using Paypal.</h2>
                     </div>
                     <div className="timeline-body">
-                      <a href="https://www.paypal.com/us/home"><h6 className="text-muted">  <img style={{ width: 320, height: 55 }} src={donate} alt="" /></h6></a>
+                      <a href="https://www.paypal.com/us/home"><h6 className="text-muted">  <img className="img-fluid" style={{ width: 320, height: 55 }} src={donate} alt="" /></h6></a>
                     </div>
                   </div>
                 </li>
@@ -58,7 +60,8 @@ const Donate = () => {
 
                   </div>
                   <div className="timeline-panel">
-                    <img src={zelle} alt="" />
+                    <img className="img-fluid" src={zelle} alt="" />
+                    <br/>
                     <div className="timeline-heading">
 
                       <h2 className="subheading">Using Zelle to send.</h2>
@@ -70,8 +73,9 @@ const Donate = () => {
                 </li>
                 <li>
                   <div >
-                    <img src={check} alt="" />
+                    <img className="img-fluid" src={check} alt="" />
                   </div>
+                  <br/>
                   <div className="timeline-panel">
                     <div className="timeline-heading">
 

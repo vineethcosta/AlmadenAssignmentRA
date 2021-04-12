@@ -35,9 +35,9 @@ function Auditions() {
 
 
           <div className="row">
-            <div className="col-lg-3 text-center">
-              <img style={{ width: 800, height: 500 }} src={auditions} alt="" />
-            </div>
+           
+              <img className="img-fluid"  src={auditions} alt="" />
+
           </div>
         </div>
       </section>

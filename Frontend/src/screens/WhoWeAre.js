@@ -8,7 +8,7 @@ const WhoWeAre = () => {
           <div className="row">
             <div className="col">
             <h3 className="service-heading">ABOUT US</h3>
-              <img style={{ width: 800, height: 600 }} src={aboutus} alt="" />
+              <img  className="img-fluid" src={aboutus} alt="" />
               <h3 className="service-heading">About the Almaden Youth Musicians</h3>
             </div>
           </div>

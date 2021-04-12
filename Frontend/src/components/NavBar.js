@@ -6,6 +6,7 @@ import {
     BrowserRouter as Router
 } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap'
+import { GoogleLogout } from 'react-google-login';
 
 const NavBar = () => {
     const { state, dispatch } = useContext(UserContext);
@@ -24,7 +25,7 @@ const NavBar = () => {
                     variant="dark"
                     expand="lg"
                     sticky="top" >
-                    <Navbar.Brand href="#home" > < img src={logo}
+                    <Navbar.Brand href="#home" > < img  className="img-fluid" src={logo}
                         style={
                             { width: 100, marginTop: -7 }}
                     /></Navbar.Brand >
@@ -54,9 +55,12 @@ const NavBar = () => {
                         </Nav>
 
                         <Nav.Link href="/" style={{ color: 'white', fontSize: 13, marginTop: -8 }} >
-                            <Nav.Link style={{ color: 'white', fontSize: 13 }} onClick={handleLogOut} >
-                                <Button style={{ color: 'white', fontSize: 13 }} variant="outline-dark" > LOGOUT </Button>
-                            </Nav.Link >
+                        <GoogleLogout
+      clientId="583670879500-hf68cropiqce4qfjans5bi5rd77qebie.apps.googleusercontent.com"
+      buttonText="Logout"
+      onLogoutSuccess={handleLogOut}
+    >
+    </GoogleLogout>
                         </Nav.Link>
                     </Navbar.Collapse>
                 </Navbar>

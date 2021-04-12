@@ -61,16 +61,17 @@ export function LoginForm(props) {
 	};
 
 	const handleGoogleLoginFailed = async (googleData) => {
-		console.log(googleData)
-		window.alert(googleData.details)
+		console.log(googleData.error)
+		window.alert(googleData.error)
 	}
 	
 	const handleGoogleLogin = async (googleData) => {
-		const token = googleData.tokenId
-		const user = googleData.profileObj.givenName
+		const tokenId = googleData.tokenId
+		const userId = googleData.profileObj.givenName
+		const emailId = googleData.profileObj.email
 		console.log(googleData)
 		await axios.post('/googleLogin', {
-			token
+			tokenId, userId, emailId
 		})
 			.then((res) => {
 				const data = res.data;
@@ -80,8 +81,8 @@ export function LoginForm(props) {
 					// we store our generated token in order to use it to access protected endpoints
 					localStorage.setItem("jwt", data.jwtToken);
 					// we also store the user details
-					localStorage.setItem("user", JSON.stringify(user));
-					dispatch({ type: "USER", payload: user });
+					localStorage.setItem("user", JSON.stringify(userId));
+					dispatch({ type: "USER", payload: userId });
 					//we can show that success PopUp or not depends on dev choice
 					//
 					// we redirect the user to home page

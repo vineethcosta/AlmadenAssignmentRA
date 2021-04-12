@@ -39,9 +39,11 @@ const Routing = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       dispatch({ type: "USER", payload: user });
+      if (history.location.pathname.startsWith("/login")) {
+        history.push("/");
+      }
     } else {
-      if (!history.location.pathname.startsWith("/login"))
-     { history.push("/login"); }
+      if (!history.location.pathname.startsWith("/login")) { history.push("/login"); }
     }
   }, []);
   return (
@@ -50,93 +52,93 @@ const Routing = () => {
         <AccountBox />
       </AppContainer></Route>
       {state &&
-      <div>
-      <Route exact path="/" >
-        <Home />
-      </Route>
-      <Route path="/contactus">
-        <ContactUs />
-      </Route>
-      <Route path="/donate">
-        <Donate />
-      </Route>
-      <Route path="/monthlynewsletter">
-        <MonthlyNewsLetter />
-      </Route>
-      <Route path="/photogallery">
-        <PhotoGallery />
-      </Route>
-      <Route path="/whoweare">
-        <section className="page-section" id="about">
-          <div className="container" >
-            <div className="row" >
-              <div className="col-lg-4 text-center" >
-                <SideBar />
-              </div>
-              <div className="col-lg-8 text-center" >
-                <WhoWeAre />
-              </div></div></div></section>
-      </Route>
-      <Route path="/events">
-        <Events />
-      </Route>
-      <Route path="/leaderofaym" >
-        <section className="page-section" id="about">
-          <div className="container" >
-            <div className="row" style={{ textAlign: 'center' }}>
-              <div className="col-lg-4 text-center" >
-                <SideBar />
-              </div>
-              <div className="col-lg-8 text-center" >
-                <LeaderOfAym />
-              </div></div></div></section>
+        <div>
+          <Route exact path="/" >
+            <Home />
+          </Route>
+          <Route path="/contactus">
+            <ContactUs />
+          </Route>
+          <Route path="/donate">
+            <Donate />
+          </Route>
+          <Route path="/monthlynewsletter">
+            <MonthlyNewsLetter />
+          </Route>
+          <Route path="/photogallery">
+            <PhotoGallery />
+          </Route>
+          <Route path="/whoweare">
+            <section className="page-section" id="about">
+              <div className="container" >
+                <div className="row" >
+                  <div className="col-lg-4 text-center" >
+                    <SideBar />
+                  </div>
+                  <div className="col-lg-8 text-center" >
+                    <WhoWeAre />
+                  </div></div></div></section>
+          </Route>
+          <Route path="/events">
+            <Events />
+          </Route>
+          <Route path="/leaderofaym" >
+            <section className="page-section" id="about">
+              <div className="container" >
+                <div className="row" style={{ textAlign: 'center' }}>
+                  <div className="col-lg-4 text-center" >
+                    <SideBar />
+                  </div>
+                  <div className="col-lg-8 text-center" >
+                    <LeaderOfAym />
+                  </div></div></div></section>
 
-      </Route>
-      <Route path="/membersreflections">
-        <section className="page-section" id="about">
-          <div className="container" >
-            <div className="row" style={{ textAlign: 'center' }}>
-              <div className="col-lg-4 text-center" >
-                <SideBar />
-              </div>
-              <div className="col-lg-8 text-center" >
-                <MembersReflections />
-              </div></div></div></section>
-      </Route>
-      <Route path="/auditions">
-        <section className="page-section" id="about">
-          <div className="container" >
-            <div className="row" style={{ textAlign: 'center' }}>
-              <div className="col-lg-4 text-center" >
-                <SideBar />
-              </div>
-              <div className="col-lg-8 text-center" >
-                <Auditions />
-              </div></div></div></section>
-      </Route>
-      <Route path="/christmasconcert">
-        <section className="page-section" id="about">
-          <div className="container" >
-            <div className="row" style={{ textAlign: 'center' }}>
-              <div className="col-lg-4 text-center" >
-                <SideBar />
-              </div>
-              <div className="col-lg-8 text-center" >
-                <ChristmasConcert />
-              </div></div></div></section>
-      </Route>
-      <Route path="/award">
-        <section className="page-section" id="about">
-          <div className="container" >
-            <div className="row" style={{ textAlign: 'center' }}>
-              <div className="col-lg-4 text-center" >
-                <SideBar />
-              </div>
-              <div className="col-lg-8 text-center" >
-                <Award />
-              </div></div></div></section>
-      </Route>
-      </div>}
+          </Route>
+          <Route path="/membersreflections">
+            <section className="page-section" id="about">
+              <div className="container" >
+                <div className="row" style={{ textAlign: 'center' }}>
+                  <div className="col-lg-4 text-center" >
+                    <SideBar />
+                  </div>
+                  <div className="col-lg-8 text-center" >
+                    <MembersReflections />
+                  </div></div></div></section>
+          </Route>
+          <Route path="/auditions">
+            <section className="page-section" id="about">
+              <div className="container" >
+                <div className="row" style={{ textAlign: 'center' }}>
+                  <div className="col-lg-4 text-center" >
+                    <SideBar />
+                  </div>
+                  <div className="col-lg-8 text-center" >
+                    <Auditions />
+                  </div></div></div></section>
+          </Route>
+          <Route path="/christmasconcert">
+            <section className="page-section" id="about">
+              <div className="container" >
+                <div className="row" style={{ textAlign: 'center' }}>
+                  <div className="col-lg-4 text-center" >
+                    <SideBar />
+                  </div>
+                  <div className="col-lg-8 text-center" >
+                    <ChristmasConcert />
+                  </div></div></div></section>
+          </Route>
+          <Route path="/award">
+            <section className="page-section" id="about">
+              <div className="container" >
+                <div className="row" style={{ textAlign: 'center' }}>
+                  <div className="col-lg-4 text-center" >
+                    <SideBar />
+                  </div>
+                  <div className="col-lg-8 text-center" >
+                    <Award />
+                  </div></div></div></section>
+          </Route>
+        </div>}
     </Switch>
   )
 }

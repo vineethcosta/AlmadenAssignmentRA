@@ -105,6 +105,7 @@ export function AccountBox(props) {
   const history = useHistory();
 
   useEffect(() => {
+    console.log("checckckc",state)
 		if (state) {
 			history.push("/");
 		} 

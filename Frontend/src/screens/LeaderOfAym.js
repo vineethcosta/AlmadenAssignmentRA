@@ -6,6 +6,7 @@ import JenniferLee from '../assets/img/JenniferLee.jpg'
 import MinjiKim from '../assets/img/MinjiKim.jpg'
 import JuhoJeon from '../assets/img/JuhoJeon.jpg'
 import LukNam from '../assets/img/Luknam.jpg'
+import Concerts from "../assets/img/concerts.png"
 function LeaderOfAym() {
     return (
         <div>
@@ -15,7 +16,7 @@ function LeaderOfAym() {
                     <div className="row">
                         <div className="col-sm-6">
                             <div className="team-member">
-                                <img src={AndrewKang} alt="" />
+                                <img  className="img-fluid" src={AndrewKang} alt="" />
                                 <h4>Andrew Kang</h4>
                                 <p className="text-muted">President</p>
                                 <ul className="list-inline social-buttons">
@@ -35,7 +36,7 @@ function LeaderOfAym() {
                         </div>
                         <div className="col-sm-6">
                             <div className="team-member">
-                                <img src={JisungKang} alt="" />
+                                <img  className="img-fluid" src={JisungKang} alt="" />
                                 <h4>Jisung Kang</h4>
                                 <p className="text-muted">Vice President</p>
                                 <ul className="list-inline social-buttons">
@@ -55,7 +56,7 @@ function LeaderOfAym() {
                         </div>
                         <div className="col-sm-6">
                             <div className="team-member">
-                                <img className="mx-auto" src={JenniferLee} alt="" />
+                                <img  className="img-fluid"  src={JenniferLee} alt="" />
                                 <h4>Jennifer Lee </h4>
                                 <p className="text-muted">Secretary</p>
                                 <ul className="list-inline social-buttons">
@@ -75,7 +76,7 @@ function LeaderOfAym() {
                         </div>
                         <div className="col-sm-6">
                             <div className="team-member">
-                                <img className="mx-auto" src={MinjiKim} alt="" />
+                                <img  className="img-fluid" src={MinjiKim} alt="" />
                                 <h4>Minji Kim</h4>
                                 <p className="text-muted">Concert Master</p>
                                 <ul className="list-inline social-buttons">
@@ -95,7 +96,7 @@ function LeaderOfAym() {
                         </div>
                         <div className="col-sm-6">
                             <div className="team-member">
-                                <img className="mx-auto" src={LukNam} alt="" />
+                                <img  className="img-fluid"src={LukNam} alt="" />
                                 <h4>Luke Nam </h4>
                                 <p className="text-muted">Vice president</p>
                                 <ul className="list-inline social-buttons">
@@ -115,7 +116,7 @@ function LeaderOfAym() {
                         </div>
                         <div className="col-sm-6">
                             <div className="team-member">
-                                <img className="mx-auto" src={JuhoJeon} alt="" />
+                                <img  className="img-fluid" src={JuhoJeon} alt="" />
                                 <h4>Juho Jeon</h4>
                                 <p className="text-muted">Historian</p>
                                 <ul className="list-inline social-buttons">

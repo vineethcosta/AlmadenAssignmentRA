@@ -4,7 +4,7 @@ const Home = () => {
 
   return (
     <div className="App">
-      <header className="masthead">
+      <header className="masthead img-fluid">
         <div className="container">
           <div className="intro-text">
             <div className="intro-lead-in">Share The love through music</div>
