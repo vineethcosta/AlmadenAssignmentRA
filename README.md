@@ -15,8 +15,8 @@ The key features of the application are:
 
 # Steps for local installation
 
-1)Navigate to root folder and type npm install to install backend dependecies
-2)Navigate to Frontend folder and type npm install
+1)Navigate to root folder and type npm install to install backend dependecies.
+2)Navigate to Frontend folder and type npm install.
 3)Navigate back to root folder and type npm run dev to run both the server and client on local PORTS 5000 and 3000 respectively of your machine.
 
 
