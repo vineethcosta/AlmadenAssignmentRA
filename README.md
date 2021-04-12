@@ -13,7 +13,7 @@ The key features of the application are:
 7) Easy Gallery layout to dynamically load images from the Cloud (Cloudinary platform) and display instead of storing locally.
 8) Contains the configurations and docker files required to host the application on Heroku or any other cloud service like Amazon Web Serivces or Google CLoud Platform using the docker-compose.yml file present in the project
 
-# Steps for local installation
+# Steps for local installation:
 
 1)Navigate to root folder and type npm install to install backend dependecies.
 2)Navigate to Frontend folder and type npm install.
